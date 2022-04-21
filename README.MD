@@ -4,6 +4,9 @@ RChain est une plateforme blockchain ultra-scalable qui permet la production con
 
 A la suite d'une conférence donnée à l'ecole 42 on a créé des sessions dev/apprentissage pour apprendre à coder en rholang, le langage des smart contracts pour RChain. Pour participer au session joindre Raphaël -> contact[ at]fabco.tech .
 
+[rchain.coop](https://rchain.coop)
+[Rholang cheat sheet](https://fabcotech.github.io/rholangcheatsheet/)
+
 Le setup avec l'installation de rnode directement au niveau OS
 ```
 https://rchain.coop/developer.html
