@@ -1,0 +1,10 @@
+new
+  entryCh,
+  lookup(`rho:registry:lookup`)
+in {
+
+  lookup!(`rho:id:5q3jg94xp3nygd4e3zm1y4qkmof3i11kdfpjo6eumn6yt78w8hqbbb`, *entryCh) |
+  for(entry <- entryCh) {
+    entry!("GET")
+  }
+}

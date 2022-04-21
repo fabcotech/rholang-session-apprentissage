@@ -1,0 +1,26 @@
+new
+  returnCh,
+  uriCh,
+  x,
+  contractCh,
+  stdout(`rho:io:stdout`),
+  expose(`rho:registry:insertArbitrary`),
+  lookup(`rho:registry:lookup`)
+in {
+
+  x!("initial value") |
+
+  // for (@("get", return) <= contractCh) { ... }
+  contract contractCh(@("get", return)) = {
+    for (value <<- x) {
+      @return!(*value)
+    }
+  } |
+
+  // expose to registry the channel contractCh
+  expose!(*contractCh, *uriCh) |
+
+  for (address <- uriCh) {
+    returnCh!(*address)
+  }
+}

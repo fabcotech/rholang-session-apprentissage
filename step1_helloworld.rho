@@ -1,0 +1,3 @@
+new x, y, stdout(`rho:io:stdout`) in {
+  stdout!("hello world !")
+}

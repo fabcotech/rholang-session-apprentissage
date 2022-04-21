@@ -1,0 +1,4 @@
+new x, stdout(`rho:io:stdout`) in {
+  x!("hello world !") |
+  stdout!("log !")
+}

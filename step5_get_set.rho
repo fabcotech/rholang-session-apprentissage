@@ -1,0 +1,26 @@
+new
+  returnCh,
+  x,
+  publicChannel,
+  entryCh,
+  outputCh,
+  stdout(`rho:io:stdout`),
+  expose(`rho:registry:insertArbitrary`),
+  lookup(`rho:registry:lookup`)
+in {
+  x!("initial value !") |
+
+  expose!(*publicChannel, *outputCh) |
+
+  // same as for (@"GET" <- publicChannel) { ... }
+  contract publicChannel(@"GET") = {
+    // only peek with <<- leave value on channel x
+    for (v <<- x) {
+      stdout!(*v)
+    }
+  } |
+
+  for (v <- outputCh) {
+    returnCh!(*v)
+  }
+}

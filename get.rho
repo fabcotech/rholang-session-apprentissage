@@ -1,0 +1,14 @@
+new
+  returnCh,
+  contractCh,
+  lookup(`rho:registry:lookup`),
+  stdout(`rho:io:stdout`)
+in {
+
+  lookup!(`rho:id:ztzzmh9mjyrr17axgtj59zrkr7g1eqmtrj88peca4qaca9rcyx59wj`, *contractCh) |
+
+  for (c <- contractCh) {
+    c!(("get", *returnCh))
+  }
+
+}

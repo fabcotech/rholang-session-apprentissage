@@ -1,0 +1,6 @@
+new x, stdout(`rho:io:stdout`) in {
+  x!("hello world !") |
+  for (val <- x) {
+    stdout!(*val)
+  }
+}
