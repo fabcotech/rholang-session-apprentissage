@@ -1,0 +1,13 @@
+new
+  returnCh,
+  ocapCh,
+  contractCh,
+  deployerId(`rho:rchain:deployerId`),
+  lookup(`rho:registry:lookup`),
+  stdout(`rho:io:stdout`)
+in {
+
+  for (ocap <<- @(*deployerId, "contract2904")) {
+    ocap!(("ping", *returnCh))
+  }
+}

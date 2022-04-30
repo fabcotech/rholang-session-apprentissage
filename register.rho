@@ -1,0 +1,23 @@
+new
+  returnCh,
+  ocapCh,
+  contractCh,
+  deployerId(`rho:rchain:deployerId`),
+  lookup(`rho:registry:lookup`),
+  stdout(`rho:io:stdout`)
+in {
+
+  lookup!(`rho:id:ba1zqtfmnkyi3r4nt9rucuzun8hqgbhw69156w7drtyitu5biuk8k6`, *contractCh) |
+
+  for (c <- contractCh) {
+
+    c!(("register", "bob", *ocapCh)) |
+
+    for (ocap <- ocapCh) {
+      ocap!(("ping", *returnCh)) |
+
+      @(*deployerId, "contract2904")!(*ocap)
+    }
+
+  }
+}

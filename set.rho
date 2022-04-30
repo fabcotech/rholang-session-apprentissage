@@ -8,7 +8,7 @@ in {
   lookup!(`rho:id:fijuyrxsb7nck4tng1zunxxp6b7tk99daua4417ahdupkoxnzu9kzy`, *contractCh) |
 
   for (c <- contractCh) {
-    c!(("get", *returnCh))
+    stdout!("got c") |
+    c!(("set", [1,2,3,4], *returnCh))
   }
-
 }

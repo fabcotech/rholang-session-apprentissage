@@ -17,6 +17,27 @@ in {
     }
   } |
 
+  contract contractCh(@("set", newValue, return)) = {
+    for (value <- x) {
+      x!(newValue) |
+      @return!(true)
+    }
+  } |
+
+
+  contract contractCh(@("register", name, return)) = {
+    // valid user input
+    new ocap in {
+
+      @return!(*ocap) |
+
+      contract ocap(@("ping", return)) = {
+        @return!("pong " ++ name)
+      }
+
+    }
+  } |
+
   // expose to registry the channel contractCh
   expose!(*contractCh, *uriCh) |
 
