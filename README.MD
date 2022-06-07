@@ -19,7 +19,7 @@ npm i -g @fabcotech/dappy-node
 mkdir test
 cd test
 easyrnode init
-eadyrnode run
+easyrnode run
 easyrnode deploy helloworld.rho
 ```
 
